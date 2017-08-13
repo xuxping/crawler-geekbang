@@ -18,4 +18,5 @@ class GeekbangItem(scrapy.Item):
     content = scrapy.Field()
     pdate = scrapy.Field()
     url = scrapy.Field()
+    author = scrapy.Field()
     images = scrapy.Field()
