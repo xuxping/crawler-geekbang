@@ -12,7 +12,7 @@ class JikesearchSpider(scrapy.Spider):
     # start_urls = ['http://s.geekbang.org/']
 
     def start_requests(self):
-        mcoll = MongoClient("127.0.0.1", 27017)['jike']['links']
+        mcoll = MongoClient("127.0.0.1", 27017)['geek']['links']
         for doc in mcoll.find():
             print doc['url']
             if doc['url'][:9] == 'http://mp':
@@ -48,6 +48,11 @@ class JikesearchSpider(scrapy.Spider):
         except:
             resource = ""
         item['resource'] = resource
+        try:
+            author =sel.xpath('//em[@class="rich_media_meta rich_media_meta_text"]/text()').extract()[-1].strip()
+        except:
+            author = ""
+        item['author'] = author
 
         content_wrap = sel.xpath('//div[@id="js_content"]')
         content = content_wrap.xpath('string(.)').extract()[0]

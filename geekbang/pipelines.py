@@ -18,7 +18,7 @@ def my_md5(str):
 class JsonPipeline(object):
     def __init__(self):
         mongo_client = MongoClient('127.0.0.1', 27017)
-        self._mcoll = mongo_client['jike']['article']
+        self._mcoll = mongo_client['geek']['article']
         self.pdate = time.strftime("%Y%m%d%H%M%S", time.localtime(time.time()))
 
     def process_item(self, item, spider):
