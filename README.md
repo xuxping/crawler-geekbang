@@ -2,9 +2,11 @@
 采集极客邦的公众号技术文章
 
 ## 脚本说明:
-1、jike.py:采集公众号的url
+1、jike.py:采集公众号的url   
 2、jikeSearch.py:采集的核心代码
 
 ## 运行
 scrapy crawl jikeSearch
 
+## 分析结果  
+可以查看 http://47.88.225.13:8003/geek/index
