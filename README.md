@@ -9,4 +9,4 @@
 scrapy crawl jikeSearch
 
 ## 分析结果  
-可以查看 http://47.88.225.13:8003/geek/index
+可以查看 INTRODUCE.md
